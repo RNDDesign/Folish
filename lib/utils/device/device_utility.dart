@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:url_launcher/url_launcher_string.dart';
 
 class TDeviceUtils {
   static void hideKeyboard(BuildContext context) {
@@ -92,6 +94,23 @@ class TDeviceUtils {
       return result.isNotEmpty && result[0].rawAddress.isNotEmpty;
     } on SocketException catch (_) {
       return false;
+    }
+  }
+
+  static bool isIOS () {
+    return Platform.isIOS;
+  }
+
+  static bool isAndroid () {
+    return Platform.isAndroid;
+  }
+
+  static void launchUrl(String url) async {
+    if(await canLaunchUrlString(url)) {
+      await launchUrlString(url);
+    }
+    else {
+      throw 'Could not launch $url';
     }
   }
 }
