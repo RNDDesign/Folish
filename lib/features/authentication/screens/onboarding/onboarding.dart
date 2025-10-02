@@ -4,15 +4,15 @@ import 'package:folish/features/authentication/screens/widgets/onboarding_dot_na
 import 'package:folish/features/authentication/screens/widgets/onboarding_next_page.dart';
 import 'package:folish/features/authentication/screens/widgets/onboarding_page.dart';
 import 'package:folish/features/authentication/screens/widgets/onboarding_skip.dart';
-import 'package:folish/utils/constants/colors.dart';
+// import 'package:folish/utils/constants/colors.dart';
 import 'package:folish/utils/constants/image_strings.dart';
-import 'package:folish/utils/constants/sizes.dart';
+// import 'package:folish/utils/constants/sizes.dart';
 import 'package:folish/utils/constants/text_strings.dart';
-import 'package:folish/utils/device/device_utility.dart';
-import 'package:folish/utils/helpers/helper_functions.dart';
+// import 'package:folish/utils/device/device_utility.dart';
+// import 'package:folish/utils/helpers/helper_functions.dart';
 import 'package:get/get.dart';
-import 'package:iconsax_flutter/iconsax_flutter.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+// import 'package:iconsax_flutter/iconsax_flutter.dart';
+// import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});

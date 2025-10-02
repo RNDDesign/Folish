@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:folish/features/authentication/screens/login/login.dart';
 import 'package:get/get.dart';
 
 class OnboardingController extends GetxController {
@@ -21,7 +22,7 @@ class OnboardingController extends GetxController {
   /// Update current index and jump to next page 
   void nextPage() {
     if(currentPageIndex.value == 2) {
-      // Get.to(LoginScreen())
+      Get.offAll(const LoginScreen());
     }
 
     else {
