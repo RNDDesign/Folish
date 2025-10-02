@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:folish/features/authentication/controllers.onboarding/onboarding_controller.dart';
-import 'package:folish/features/authentication/screens/widgets/onboarding_dot_navigation.dart';
-import 'package:folish/features/authentication/screens/widgets/onboarding_next_page.dart';
-import 'package:folish/features/authentication/screens/widgets/onboarding_page.dart';
-import 'package:folish/features/authentication/screens/widgets/onboarding_skip.dart';
+import 'package:folish/features/authentication/controllers/onboarding/onboarding_controller.dart';
+import 'package:folish/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
+import 'package:folish/features/authentication/screens/onboarding/widgets/onboarding_next_page.dart';
+import 'package:folish/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
+import 'package:folish/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 // import 'package:folish/utils/constants/colors.dart';
 import 'package:folish/utils/constants/image_strings.dart';
 // import 'package:folish/utils/constants/sizes.dart';

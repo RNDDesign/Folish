@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:folish/features/authentication/screens/password_configurations/forget_password.dart';
+import 'package:folish/features/authentication/screens/signup/signup.dart';
 // import 'package:folish/common/styles/spacing_styles.dart';
 // import 'package:folish/utils/constants/colors.dart';
 // import 'package:folish/utils/constants/image_strings.dart';
 import 'package:folish/utils/constants/sizes.dart';
 import 'package:folish/utils/constants/text_strings.dart';
+import 'package:get/get.dart';
 // import 'package:folish/utils/helpers/helper_functions.dart';
 // import 'package:get/get_utils/src/extensions/string_extensions.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
@@ -57,7 +60,7 @@ class TLoginForm extends StatelessWidget {
     
                 // Forget Password
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () => Get.to(() => const ForgetPassword()),
                   child: const Text(TTexts.forgetPassword),
                 ),
               ],
@@ -79,7 +82,7 @@ class TLoginForm extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: OutlinedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => const SignUpScreen()),
                 child: Text(TTexts.createAccount),
               ),
             ),

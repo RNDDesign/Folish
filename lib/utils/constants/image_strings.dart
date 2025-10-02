@@ -15,4 +15,12 @@ class TImages {
       "assets/images/on-boading-images/onboarding2.png";
   static const String onBoardingImage3 =
       "assets/images/on-boading-images/onboarding3.png";
+
+  // Animations 
+  static const String productsIllustrations = "assets/images/on-boading-images/onboarding1.png";
+  static const String productsSaleIllustrations = "assets/images/on-boading-images/onboarding1.png";
+  static const String staticSuccessIllustrations = "assets/images/on-boading-images/onboarding1.png";
+  static const String deliveredInPlaneIllustrations = "assets/images/on-boading-images/onboarding1.png";
+  static const String deliveredEmailIllustrations = "assets/images/on-boading-images/onboarding1.png";
+  static const String verifyIllustrations = "assets/images/on-boading-images/onboarding1.png";
 }

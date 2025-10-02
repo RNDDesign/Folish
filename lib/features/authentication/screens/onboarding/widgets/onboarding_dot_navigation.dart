@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:folish/features/authentication/controllers.onboarding/onboarding_controller.dart';
+import 'package:folish/features/authentication/controllers/onboarding/onboarding_controller.dart';
 import 'package:folish/utils/constants/colors.dart';
 import 'package:folish/utils/constants/sizes.dart';
 import 'package:folish/utils/device/device_utility.dart';
