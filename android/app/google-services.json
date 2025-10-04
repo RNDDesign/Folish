@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "218578553229",
+    "project_id": "folish-c1d90",
+    "storage_bucket": "folish-c1d90.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:218578553229:android:8bdbc90c3ae170c48f55c4",
+        "android_client_info": {
+          "package_name": "com.example.folish"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "218578553229-rc061p161j1aqasu2abdn6nt061olub4.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkGZn5lxZrYt54HrF0hKWytuksnfONLTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "218578553229-rc061p161j1aqasu2abdn6nt061olub4.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "218578553229-8mh8av45kbqdklp8selb6q621i8npdrp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.folish"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

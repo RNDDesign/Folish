@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:folish/features/authentication/screens/password_configurations/forget_password.dart';
 import 'package:folish/features/authentication/screens/signup/signup.dart';
+import 'package:folish/navigation_menu.dart';
 // import 'package:folish/common/styles/spacing_styles.dart';
 // import 'package:folish/utils/constants/colors.dart';
 // import 'package:folish/utils/constants/image_strings.dart';
@@ -12,17 +13,13 @@ import 'package:get/get.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 class TLoginForm extends StatelessWidget {
-  const TLoginForm({
-    super.key,
-  });
+  const TLoginForm({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Form(
       child: Padding(
-        padding: const EdgeInsets.symmetric(
-          vertical: TSizes.spaceBtwSections,
-        ),
+        padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
         child: Column(
           children: [
             // Email
@@ -32,9 +29,9 @@ class TLoginForm extends StatelessWidget {
                 labelText: TTexts.email,
               ),
             ),
-    
+
             const SizedBox(height: TSizes.spaceBtwInputFields),
-    
+
             // Password
             TextFormField(
               decoration: const InputDecoration(
@@ -43,9 +40,9 @@ class TLoginForm extends StatelessWidget {
                 suffixIcon: Icon(Iconsax.eye_slash),
               ),
             ),
-    
+
             const SizedBox(height: TSizes.spaceBtwInputFields / 2),
-    
+
             // Remember me & forget password
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -57,7 +54,7 @@ class TLoginForm extends StatelessWidget {
                     const Text(TTexts.rememberMe),
                   ],
                 ),
-    
+
                 // Forget Password
                 TextButton(
                   onPressed: () => Get.to(() => const ForgetPassword()),
@@ -65,19 +62,19 @@ class TLoginForm extends StatelessWidget {
                 ),
               ],
             ),
-    
+
             const SizedBox(height: TSizes.spaceBtwSections),
-    
+
             // Sign in button
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(
-                onPressed: () {},
+                onPressed: () => Get.to(() => const NavigationMenu()),
                 child: Text(TTexts.signIn),
               ),
             ),
             const SizedBox(height: TSizes.spaceBtwItems),
-    
+
             // Create account button
             SizedBox(
               width: double.infinity,

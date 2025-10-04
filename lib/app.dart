@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:folish/bindings/general_bindings.dart';
+import 'package:folish/utils/constants/colors.dart';
 import 'package:get/get.dart';
 import 'package:folish/features/authentication/screens/onboarding/onboarding.dart';
 import 'package:folish/utils/theme/theme.dart';
@@ -13,7 +15,11 @@ class App extends StatelessWidget {
       themeMode: ThemeMode.system,
       theme: TAppTheme.lightTheme,
       darkTheme: TAppTheme.darkTheme,
-      home: const OnboardingScreen(),
+      initialBinding: GeneralBindings(),
+      home: const Scaffold(
+        backgroundColor: TColors.primary,
+        body: Center(child: CircularProgressIndicator(color: Colors.white)),
+      ),
     );
   }
 }
