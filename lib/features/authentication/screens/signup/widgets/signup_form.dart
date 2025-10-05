@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:folish/features/authentication/controllers/signup/signup_controller.dart';
 import 'package:folish/features/authentication/screens/signup/verify_email.dart';
 import 'package:folish/utils/constants/colors.dart';
@@ -82,6 +83,8 @@ class TSignUpForm extends StatelessWidget {
           TextFormField(
             controller: controller.phoneNumber,
             validator: (value) => TValidator.validatePhoneNumber(value),
+            // maxLength: 10,
+            // inputFormatters: [FilteringTextInputFormatter.digitsOnly],
             expands: false,
             decoration: const InputDecoration(
               labelText: TTexts.phoneNo,

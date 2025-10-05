@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:folish/data/repositories/authentication/authentication_repository.dart';
 import 'package:folish/data/repositories/user/user_repository.dart';
@@ -41,6 +41,7 @@ class SignupController extends GetxController {
 
       // Form validation
       if (signupFormKey.currentState!.validate()) {
+        TFullScreenLoader.stopLoading();
         return;
       }
 
@@ -80,12 +81,11 @@ class SignupController extends GetxController {
         title: 'Congratulations',
         message: 'Your account has been created! Verify email to continue',
       );
-      Get.to(() => const VerifyEmailScreen());
-      
+      Get.to(() =>  VerifyEmailScreen(email: email.text.trim(),));
     } catch (e) {
       // Show some generic error to user
       TFullScreenLoader.stopLoading();
       TLoaders.errorSnackBar(title: 'Oh Snap!', message: e.toString());
-    } 
+    }
   }
 }

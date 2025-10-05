@@ -25,4 +25,5 @@ class TImages {
   static const String verifyIllustrations = "assets/images/on-boading-images/onboarding1.png";
 
   static const String docerAnimation = "assets/images/on-boading-images/onboarding1.png";
+  static const String successfullyRegisterAnimation = "assets/images/on-boading-images/onboarding1.png";
 }

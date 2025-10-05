@@ -3,6 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:folish/features/authentication/screens/login/login.dart';
 import 'package:folish/features/authentication/screens/onboarding/onboarding.dart';
+import 'package:folish/features/authentication/screens/signup/verify_email.dart';
+import 'package:folish/navigation_menu.dart';
 import 'package:folish/utils/exceptions/firebase_exceptions.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
@@ -23,11 +25,20 @@ class AuthenticationRepository extends GetxController {
 
   // Function to show relevant screen
   screenRedirect() async {
-    // Local storage
-    deviceStorage.writeIfNull('isFirstTime', true);
-    deviceStorage.read('isFirstTime') != true
-        ? Get.offAll(() => const LoginScreen())
-        : Get.offAll(() => const OnboardingScreen());
+    final user = _auth.currentUser;
+    if (user != null) {
+      if (user.emailVerified) {
+        Get.offAll(() => const NavigationMenu());
+      } else {
+        Get.offAll(() => VerifyEmailScreen(email: _auth.currentUser?.email));
+      }
+    } else {
+      // Local storage
+      deviceStorage.writeIfNull('isFirstTime', true);
+      deviceStorage.read('isFirstTime') != true
+          ? Get.offAll(() => const LoginScreen())
+          : Get.offAll(() => const OnboardingScreen());
+    }
   }
 
   /*-----------------------------Email and Password SignIn-------------------------- */
@@ -44,21 +55,35 @@ class AuthenticationRepository extends GetxController {
         email: email,
         password: password,
       );
-    } on FirebaseAuthException catch(e) {
+    } on FirebaseAuthException catch (e) {
       throw TFirebaseAuthException(e.code).message;
-    } on FirebaseException catch(e) {
+    } on FirebaseException catch (e) {
       throw TFirebaseException(e.code).message;
-    } on FormatException catch(_) {
+    } on FormatException catch (_) {
       throw const TFormatException();
-    } on PlatformException catch(e) {
+    } on PlatformException catch (e) {
       throw TPlatformException(e.code).message;
-    }
-    catch (e) {
+    } catch (e) {
       throw 'Something went wrong. Please try again';
     }
   }
 
   // Email Verification - Mail Verification
+  Future<void> sendEmailVerification() async {
+    try {
+      await _auth.currentUser?.sendEmailVerification();
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 
   // Re Authenticate - ReAuthenticate User
 
@@ -69,4 +94,20 @@ class AuthenticationRepository extends GetxController {
   // Google Login
 
   /*----------------------------Logout user--------------------------------------- */
+  Future<void> logout() async {
+    try {
+      await FirebaseAuth.instance.signOut();
+      Get.offAll(() => const LoginScreen());
+    } on FirebaseAuthException catch (e) {
+      throw TFirebaseAuthException(e.code).message;
+    } on FirebaseException catch (e) {
+      throw TFirebaseException(e.code).message;
+    } on FormatException catch (_) {
+      throw const TFormatException();
+    } on PlatformException catch (e) {
+      throw TPlatformException(e.code).message;
+    } catch (e) {
+      throw 'Something went wrong. Please try again';
+    }
+  }
 }
